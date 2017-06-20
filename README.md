@@ -1,4 +1,4 @@
-# unittest boilerplate
+# unittest boilerplate [![Build Status](https://travis-ci.org/pedro2555/unittest-boilerplate.svg?branch=master)](https://travis-ci.org/pedro2555/unittest-boilerplate)
 
 A super simple boilerplate on python unittest, this is mainly for me to get start at it
 
