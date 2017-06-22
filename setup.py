@@ -26,5 +26,5 @@ setup(
     packages = find_packages(),
     install_requires = [],
     test_requires = ['lint'],
-    test_suite = 'tests'                      
+    test_suite = 'tests'
 )
