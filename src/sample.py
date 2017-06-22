@@ -15,10 +15,52 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with unittest boilerplate.  If not, see <http://www.gnu.org/licenses/>.
 """
-class Sample(object):
+def merge_sort(array):
+    """Returns array sorted in ascending order
 
-	def __init__(self):
-		self.text = "It Works!"
+    Args:
+        array (array): list of elements to sort
+    """
+    # base case, a single item array is also sorted
+    if len(array) <= 1:
+        return array
 
-	def IsOdd(self, n):
-	    return n % 2 == 1
+    # split the array in half
+    lenght = len(array)
+    array1 = array[0:lenght/2]
+    array2 = array[lenght/2:lenght]
+
+    array1 = merge_sort(array1)
+    array2 = merge_sort(array2)
+
+    return merge(array1, array2)
+
+def merge(array1, array2):
+    """Merges two previously sorted arrays into a sorted array
+    using two finger algorithm
+
+    Args:
+        array1 (array): A sorted array of n elements
+        array2 (array): A sorted array of n elements
+    """
+    array3 = []
+    # while both arrays have at least one value
+    while array1 and array2:
+        # append the smallest value into the result array and remove it from the origin
+        if array1[0] > array2[0]:
+            array3.append(array2[0])
+            del array2[0]
+        else:
+            array3.append(array1[0])
+            del array1[0]
+
+    # if any of the arrays empties out just append the other one as is (it should be sorted anyway)
+    while array1:
+        array3.append(array1[0])
+        del array1[0]
+
+    while array2:
+        array3.append(array2[0])
+        del array2[0]
+
+    return array3

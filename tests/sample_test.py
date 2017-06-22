@@ -16,20 +16,35 @@ You should have received a copy of the GNU General Public License
 along with unittest boilerplate.  If not, see <http://www.gnu.org/licenses/>.
 """
 import unittest
-from src.sample import Sample
+from src import sample
 
 class Sample_test(unittest.TestCase):
 
-	def setUp(self):
-		self.s = Sample()
+	def test_merge_sort(self):
 
-	def test___init__(self):
-		self.assertTrue(self.s.text == 'It Works!')
+		# base case test
+		case = [3]
+		self.assertEqual(sample.merge_sort(case), case)
 
-	def test_IsOdd(self):
-		self.assertFalse(self.s.IsOdd(0))
-		self.assertTrue(self.s.IsOdd(1))
-		self.assertFalse(self.s.IsOdd(2))
+		# even sized sort
+		case = [1, 5, 2, 7]
+		self.assertEqual(sample.merge_sort(case), [1, 2, 5, 7])
+
+		# odd sized sort
+		case = [1, 2, 7]
+		self.assertEqual(sample.merge_sort(case), [1, 2, 7])
+
+	def test_merge(self):
+
+		# even sized sort
+		case1 = [1, 3]
+		case2 = [2, 4]
+		self.assertEqual(sample.merge(case1, case2), [1, 2, 3, 4])
+
+		# odd sized sort
+		case1 = [1, 3]
+		case2 = [4]
+		self.assertEqual(sample.merge(case1, case2), [1, 3, 4])
 
 if __name__ == '__main__':
     unittest.main()

@@ -18,12 +18,13 @@ along with unittest boilerplate.  If not, see <http://www.gnu.org/licenses/>.
 from setuptools import setup, find_packages
 
 setup(
-	name='unittest boilerplate',
-	version='0.1',
-	description = 'unittest boilerplate',
-	author = 'Pedro Rodrigues',
-	author_email = 'prodrigues1990@gmail.com',
-	packages = find_packages(),
-	install_requires = [],
-	test_suite = 'tests',                          
+    name='unittest boilerplate',
+    version='0.1',
+    description = 'unittest boilerplate',
+    author = 'Pedro Rodrigues',
+    author_email = 'prodrigues1990@gmail.com',
+    packages = find_packages(),
+    install_requires = [],
+    test_requires = ['lint'],
+    test_suite = 'tests'                      
 )
