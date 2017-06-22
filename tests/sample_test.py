@@ -31,7 +31,7 @@ class Sample_test(unittest.TestCase):
 		self.assertEqual(sample.merge_sort(case), [1, 2, 5, 7])
 
 		# odd sized sort
-		case = [1, 2, 7]
+		case = [7, 1, 2]
 		self.assertEqual(sample.merge_sort(case), [1, 2, 7])
 
 	def test_merge(self):
