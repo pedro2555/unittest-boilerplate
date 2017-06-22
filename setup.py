@@ -24,7 +24,6 @@ setup(
     author = 'Pedro Rodrigues',
     author_email = 'prodrigues1990@gmail.com',
     packages = find_packages(),
-    install_requires = [],
-    test_requires = ['lint'],
+    install_requires = ['setuptools-lint'],
     test_suite = 'tests'
 )
