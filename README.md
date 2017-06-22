@@ -14,7 +14,6 @@ To run all your tests in one go:
 
 `python setup.py test`
 
-
 Or, to run a single test:
 
 `python -m unittest tests.source.sample_source_test.SampleSource_test.test_IsEven`
